@@ -133,7 +133,7 @@ rm -rf ~/.config/nvim
 git clone git@github.com:GeraultTr/lazyvim_kickstart.git ~/.config/nvim
 ```
 
-Which adds the content of ~/.config/nvim/plugin/diagnostics.lua , theme.lua and outline.lua , compared to the vanilla lazyvim config
+Which adds the content of ~/.config/nvim/plugin/diagnostics.lua , theme.lua, outline.lua and claudecode.lua , compared to the vanilla lazyvim config
 
 ## Proper terminal font (e.g. JetBrainsMono is great for dev)
 ```
