@@ -3,7 +3,7 @@
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
-## First install Lazyvim and its prerequiriste (Ubuntu only for now)
+## First install Lazyvim and its prerequiriste (Ubuntu and WSL only for now)
 
 ```
 #!/usr/bin/env bash
