@@ -133,7 +133,19 @@ rm -rf ~/.config/nvim
 git clone git@github.com:GeraultTr/lazyvim_kickstart.git ~/.config/nvim
 ```
 
-Added the content of ~/.config/nvim/plugin/diagnostics.lua , theme.lua and outline.lua
+Which adds the content of ~/.config/nvim/plugin/diagnostics.lua , theme.lua and outline.lua , compared to the vanilla lazyvim config
+
+## Proper terminal font (e.g. JetBrainsMono is great for dev)
+```
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+
+curl -fLo "JetBrainsMono.zip" \
+  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+
+unzip JetBrainsMono.zip -d JetBrainsMono
+fc-cache -fv
+```
 
 ## Final manual steps
 
@@ -145,9 +157,9 @@ Added the content of ~/.config/nvim/plugin/diagnostics.lua , theme.lua and outli
 
 ### Setup terminal to use and aliases for quick launch
 
-For example install wezterm and add an alias to ~/.bashrc and reload with "source ~/.bashrc". Example:
+Add an alias to ~/.bashrc and reload with "source ~/.bashrc". Example:
 ```
-alias mecha='cd ~/Documents/package/MECHA-dev && mamba activate mecha && wezterm cli spawn --new-window --cwd "$PWD" mamba run -n "$CONDA_DEFAULT_ENV" --cwd "$PWD" nvim'
+alias mecha='cd ~/Documents/package/MECHA-dev && mamba activate mecha && gnome-terminal --working-directory="$PWD" -- mamba run -n "$CONDA_DEFAULT_ENV" nvim'
 ```
 and type space qs when arriving to restore the session associated with the working directory pointed by the alias
 
