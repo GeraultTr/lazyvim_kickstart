@@ -1,69 +1,101 @@
 # Navigating
 
-- From the eye s + type + letters
-- otherwise use space + sG to search throughout all project
-- search in file space + sb
-- Jump to files space + fF (capitals always to work in whole working directory of the project)
-- m + LETTER / access through ' + LETTER / del with :delmarks LETTER
-- Jump to definition : gd
-- Go to references, first file first gr
-- Current file outline space + ss
-- Filter outline 
-- K on a name to see the hoover
-- Ctrl-o   older cursor position
-- Ctrl-i   newer cursor position
+| Keybinding | Description |
+|---|---|
+| s + type + letters | Navigate to visible position (from the eye) |
+| space + sG | Search throughout all project |
+| space + sb | Search in file |
+| space + fF | Jump to files (capitals = whole project directory) |
+| m + LETTER | Set mark |
+| ' + LETTER | Jump to mark |
+| :delmarks LETTER | Delete mark |
+| gd | Jump to definition |
+| gr | Go to references (first file first) |
+| space + ss | Current file outline |
+| K | Show hover documentation |
+| Ctrl-o | Older cursor position |
+| Ctrl-i | Newer cursor position |
 
 **Between panes**
-- Ctrl + h j k l      for     left, down, up, right, respectively
+
+| Keybinding | Description |
+|---|---|
+| Ctrl + h/j/k/l | Move left/down/up/right between panes |
 
 **Between files**
-- Shift-h   previous buffer
-- Shift-l   next buffer
-- leader b b   switch to other buffer
-- leader ,     list open buffers
-- leader f r   recent files
+
+| Keybinding | Description |
+|---|---|
+| Shift-h | Previous buffer |
+| Shift-l | Next buffer |
+| leader b b | Switch to other buffer |
+| leader , | List open buffers |
+| leader f r | Recent files |
 
 # LSP errors
 
-- space cd to get a popup of the error
-- close bracket + e next error  
-- open bracket + e previous error
+| Keybinding | Description |
+|---|---|
+| space cd | Popup of the error |
+| ] + e | Next error |
+| [ + e | Previous error |
 
 # Edit
-- i \ escape for edition
-- u - undo
-- ctrl + r - redo
+
+| Keybinding | Description |
+|---|---|
+| i / Escape | Enter/exit insert mode |
+| u | Undo |
+| Ctrl-r | Redo |
 
 **Visual mode**
-- v         start character-wise selectio
-- V         start line-wise selection
-- Ctrl-v    start block selection
-- y         copy selected text
-- d         cut selected text
-- p         paste after cursor
-- P         paste before cursor
-- 
+
+| Keybinding | Description |
+|---|---|
+| v | Start character-wise selection |
+| V | Start line-wise selection |
+| Ctrl-v | Start block selection |
+| y | Copy selected text |
+| d | Cut selected text |
+| p | Paste after cursor |
+| P | Paste before cursor |
+
 **Whole line management**
-- gcc to comment
+
+| Keybinding | Description |
+|---|---|
+| gcc | Comment line |
 
 # File management
-- :w for saving
-- :q to quit
-- :!mkdir -p notes to make parent directories
-- :e notes/todo.md to create files
+
+| Keybinding | Description |
+|---|---|
+| :w | Save file |
+| :q | Quit |
+| :!mkdir -p notes | Make parent directories |
+| :e notes/todo.md | Create file |
 
 # Project
-Open project
-home page p or space + fp
+
+| Keybinding | Description |
+|---|---|
+| p (home page) / space + fp | Open project |
 
 # Terminal
-- space ft to trigger a terminal
-- close it with ctrl + A and :q
-- 
-# Git control:
-- hit space + gd for diffed files, space + gs for whole summary
-- git status in terminal for summary
-- In file go to line and use space + ghd
-- `]c`Jump to **next** diff hunk`[c`Jump to **previous** diff hunk
-- space ghr reset current hunk (or space ghR for whole file)
-	and simply :q to close extra window
+
+| Keybinding | Description |
+|---|---|
+| space ft | Trigger terminal |
+| Ctrl-A then :q | Close terminal |
+
+# Git control
+
+| Keybinding | Description |
+|---|---|
+| space + gd | Diffed files |
+| space + gs | Whole git summary |
+| space + ghd | Diff current line |
+| ]c | Jump to next diff hunk |
+| [c | Jump to previous diff hunk |
+| space ghr | Reset current hunk |
+| space ghR | Reset whole file |
