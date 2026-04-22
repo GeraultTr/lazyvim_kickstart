@@ -5,6 +5,7 @@
 - Jump to files space + fF (capitals always to work in whole working directory of the project)
 - m + LETTER / access through ' + LETTER / del with :delmarks LETTER
 - Jump to definition : gd
+- Go to references, first file first gr
 - Current file outline space + ss
 - Filter outline 
 - K on a name to see the hoover
@@ -33,7 +34,7 @@
 - ctrl + r - redo
 
 **Visual mode**
-- v         start character-wise selectio
+- v         start character-wise selection
 - V         start line-wise selection
 - Ctrl-v    start block selection
 - y         copy selected text
@@ -57,7 +58,7 @@ home page p or space + fp
 # Terminal
 - space ft to trigger a terminal
 - close it with ctrl + A and :q
-- 
+ 
 # Git control:
 - git status in terminal for summary
 - In file go to line and use space + ghd
