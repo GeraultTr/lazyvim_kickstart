@@ -5,7 +5,10 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 ## First install Lazyvim and its prerequiriste (Ubuntu and WSL only for now)
 
-```
+<details>
+<summary>Click to expand and copy code</summary>
+  
+```bash
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -124,7 +127,9 @@ Next:
   nvim
   :LazyHealth
 EOF
+
 ```
+</details>
 
 ## Then apply .config Editions
 
