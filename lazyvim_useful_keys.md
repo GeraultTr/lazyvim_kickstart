@@ -2,6 +2,7 @@
 
 - From the eye s + type + letters
 - otherwise use space + sG to search throughout all project
+- search in file space + sb
 - Jump to files space + fF (capitals always to work in whole working directory of the project)
 - m + LETTER / access through ' + LETTER / del with :delmarks LETTER
 - Jump to definition : gd
@@ -34,7 +35,7 @@
 - ctrl + r - redo
 
 **Visual mode**
-- v         start character-wise selection
+- v         start character-wise selectio
 - V         start line-wise selection
 - Ctrl-v    start block selection
 - y         copy selected text
@@ -58,8 +59,9 @@ home page p or space + fp
 # Terminal
 - space ft to trigger a terminal
 - close it with ctrl + A and :q
- 
+- 
 # Git control:
+- hit space + gd for diffed files, space + gs for whole summary
 - git status in terminal for summary
 - In file go to line and use space + ghd
 - `]c`Jump to **next** diff hunk`[c`Jump to **previous** diff hunk

@@ -1,4 +1,4 @@
-# 💤 LazyVim
+# 💤 LazyVim quick config
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
@@ -165,3 +165,7 @@ and type space qs when arriving to restore the session associated with the worki
 
 (or at least do _mamba activate_ before triggering nvim)
 
+
+# Lazyvim keybindings
+
+[keybindings](lazyvim_useful_keys.md)
