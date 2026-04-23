@@ -5,6 +5,7 @@
 | s + type + letters | Navigate to visible position (from the eye) |
 | space + sG | Search throughout all project |
 | space + sb | Search in file |
+| space + sw | Search current word or visual selection |
 | space + fF | Jump to files (capitals = whole project directory) |
 | m + LETTER | Set mark |
 | ' + LETTER | Jump to mark |
