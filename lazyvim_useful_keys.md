@@ -100,3 +100,11 @@
 | [c | Jump to previous diff hunk |
 | space ghr | Reset current hunk |
 | space ghR | Reset whole file |
+
+# Claude code extension
+
+| Keybinding | Description |
+|---|---|
+| space + ac | Toggle Claude code pane |
+| shift + Tab twice | Enable plan mode in claude code |
+| / | Explore claude code commands (e.g. /resume /config) |
