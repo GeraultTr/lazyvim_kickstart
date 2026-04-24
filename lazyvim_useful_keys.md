@@ -75,6 +75,8 @@
 | :q | Quit |
 | :!mkdir -p notes | Make parent directories |
 | :e notes/todo.md | Create file |
+| Ctrl + e , then a / m / d  on file | Add / Move / Delete file by editing its path |
+
 
 # Project
 
