@@ -74,7 +74,7 @@
 | :q | Quit |
 | Ctrl + e , then a / m / d  on file | Add / Move / Delete file by editing its path. To add a directory / at the end of the path |
 
-**Redundant but resource
+**Redundant but resource**
 | :w | Save file (But autosave is turned on in this template |
 | :!mkdir -p notes | Make parent directories |
 | :e notes/todo.md | Create file |
