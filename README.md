@@ -173,7 +173,7 @@ alias metafspm='cd ~/Documents/package/Wheat-BRIDGES_framework/metafspm && mamba
 ```
 and type space qs when arriving to restore the session associated with the working directory pointed by the alias
 
-**3) Finally quickly jump between tmux sessions by adding custom keybindings into ~/.tmux.conf by writing:**
+**3) Finally quickly jump between tmux sessions by adding custom keybindings into "~/.tmux.conf" by writing:**
 ```
 bind-key m switch-client -t metafspm
 ```
