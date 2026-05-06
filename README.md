@@ -160,15 +160,27 @@ fc-cache -fv
 ### Lazy Extras (from main menu, install with i, remove with X)
 - util.project -> ensures .git repos are recognized as projects
 
-### Setup terminal to use and aliases for quick launch
+### (Recommended) Setup terminal to use and aliases for quick launch
 
-Add an alias to ~/.bashrc and reload with "source ~/.bashrc". Example:
+**1) Install tmux**
 ```
-alias mecha='cd ~/Documents/package/MECHA-dev && mamba activate mecha && gnome-terminal --working-directory="$PWD" -- mamba run -n "$CONDA_DEFAULT_ENV" nvim'
+sudo apt install tmux
+```
+
+**2) Add an alias to ~/.bashrc and reload with "source ~/.bashrc". Example:**
+```
+alias metafspm='cd ~/Documents/package/Wheat-BRIDGES_framework/metafspm && mamba activate metafspm && gnome-terminal --working-directory="$PWD" -- tmux new-session -A -s "metafspm" -c "$PWD" "mamba run -n metafspm nvim"'
 ```
 and type space qs when arriving to restore the session associated with the working directory pointed by the alias
 
-(or at least do _mamba activate_ before triggering nvim)
+**3) Finally quickly jump between tmux sessions by adding custom keybindings into ~/.tmux.conf by writing:**
+```
+bind-key m switch-client -t metafspm
+```
+and the corresponding keybind is triggered by Ctrl+b then KEY.
+
+
+_(or if you do none of that, at least do _mamba activate_ before triggering nvim)_
 
 
 # Lazyvim keybindings
