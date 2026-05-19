@@ -58,6 +58,7 @@
 | Ctrl-v | Start block selection |
 | y | Copy selected text |
 | d | Cut selected text |
+| ggdG | Delete whole file |
 | p | Paste after cursor |
 | P | Paste before cursor |
 
