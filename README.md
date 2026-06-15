@@ -177,7 +177,7 @@ and type space qs when arriving to restore the session associated with the worki
 ```
 bind-key m switch-client -t metafspm
 ```
-and the corresponding keybind is triggered by Ctrl+b then KEY.
+and the corresponding keybind is triggered by Ctrl+b then KEY. Use **tmux source-file ~/.tmux.conf** to for changes to take effect.
 
 
 _(or if you do none of that, at least do _mamba activate_ before triggering nvim)_
