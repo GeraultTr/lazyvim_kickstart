@@ -73,7 +73,7 @@
 | Keybinding | Description |
 |---|---|
 | :q | Quit |
-| Ctrl + e , then a / m / d  on file | Add / Move / Delete file by editing its path. To add a directory / at the end of the path |
+| Ctrl + e , then a / m / d / c  on file | Add / Move / Delete / Copy file by editing its path. To add a directory / at the end of the path |
 
 
 **Redundant but resource**
