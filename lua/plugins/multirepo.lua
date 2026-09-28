@@ -26,16 +26,50 @@ local function repo_name(path)
   return (rel == "" or rel == ".") and vim.fn.fnamemodify(path, ":t") or rel
 end
 
--- Let the user pick one repo, then call cb(repo_path)
-local function pick_repo(cb)
+-- Repos that have changes, with the number of changed files.
+-- mode "diff":   tracked changes only, staged or not (what the diff picker shows)
+-- mode "status": also counts untracked files (what the status picker shows)
+local function changed_repos(mode)
   local repos = find_repos()
-  if #repos == 0 then
-    vim.notify("No git repos found under " .. vim.fn.getcwd(), vim.log.levels.WARN)
+  local jobs = {}
+  for i, repo in ipairs(repos) do
+    local cmd = mode == "diff" and { "git", "-C", repo, "diff", "HEAD", "--name-only" }
+      or { "git", "-C", repo, "status", "--porcelain" }
+    jobs[i] = vim.system(cmd, { text = true }) -- all repos are checked in parallel
+  end
+  local result = {}
+  for i, job in ipairs(jobs) do
+    local r = job:wait()
+    local n = #vim.split(r.stdout or "", "\n", { trimempty = true })
+    if r.code == 0 and n > 0 then
+      table.insert(result, { path = repos[i], count = n })
+    end
+  end
+  return result
+end
+
+-- Let the user pick one repo, then call cb(repo_path).
+-- With mode ("diff" or "status"), only repos with changes are listed.
+local function pick_repo(cb, mode)
+  local items
+  if mode then
+    items = changed_repos(mode)
+  else
+    items = vim.tbl_map(function(p) return { path = p } end, find_repos())
+  end
+  if #items == 0 then
+    vim.notify(mode and "No repo has changes" or ("No git repos found under " .. vim.fn.getcwd()), vim.log.levels.INFO)
     return
   end
-  vim.ui.select(repos, { prompt = "Git repo", format_item = repo_name }, function(choice)
+  vim.ui.select(items, {
+    prompt = mode and "Git repo (with changes)" or "Git repo",
+    format_item = function(item)
+      local name = repo_name(item.path)
+      return item.count and string.format("%s  (%d file%s)", name, item.count, item.count > 1 and "s" or "") or name
+    end,
+  }, function(choice)
     if choice then
-      cb(choice)
+      cb(choice.path)
     end
   end)
 end
@@ -107,8 +141,8 @@ return {
     "folke/snacks.nvim",
     keys = {
       -- Pick one repo
-      { "<leader>gms", function() pick_repo(function(r) Snacks.picker.git_status({ cwd = r }) end) end, desc = "Status (pick repo)" },
-      { "<leader>gmd", function() pick_repo(function(r) Snacks.picker.git_diff({ cwd = r }) end) end, desc = "Diff hunks (pick repo)" },
+      { "<leader>gms", function() pick_repo(function(r) Snacks.picker.git_status({ cwd = r }) end, "status") end, desc = "Status (pick changed repo)" },
+      { "<leader>gmd", function() pick_repo(function(r) Snacks.picker.git_diff({ cwd = r }) end, "diff") end, desc = "Diff hunks (pick changed repo)" },
       { "<leader>gml", function() pick_repo(function(r) Snacks.picker.git_log({ cwd = r }) end) end, desc = "Log (pick repo)" },
       { "<leader>gmg", function() pick_repo(function(r) Snacks.lazygit({ cwd = r }) end) end, desc = "Lazygit (pick repo)" },
       -- Repo of the current buffer, no picking needed
